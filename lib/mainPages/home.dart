@@ -1,10 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:paydai/utils/palette.dart';
+import 'package:paydai/widgets/balance.dart';
+import 'package:paydai/widgets/homeAppBarAction.dart';
+import 'package:paydai/widgets/homeAppBarCenter.dart';
+import 'package:paydai/widgets/homeQuickActionsRow.dart';
+import 'package:paydai/widgets/homeTransactionsContainer.dart';
+import 'package:paydai/widgets/referCard.dart';
+import 'package:paydai/widgets/transferMoneyCard.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,53 +29,98 @@ class Home extends StatelessWidget {
           ),
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              CupertinoIcons.bell,
-            ),
+          HomeAppBarAction(
+            icon: CupertinoIcons.bell_fill,
+            onTap: () {},
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              CupertinoIcons.money_dollar_circle_fill,
-            ),
+          HomeAppBarAction(
+            icon: CupertinoIcons.money_dollar_circle_fill,
+            onTap: () {},
           ),
         ],
         centerTitle: true,
-        title: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 8,
-            vertical: 0,
-          ),
-          width: 120,
-          height: 40,
-          decoration: BoxDecoration(
-            color: Colors.grey[700],
-            borderRadius: BorderRadius.circular(
-              50,
+        title: const HomeAppBarCenter(),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              color: Palette.kToDark,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20.0,
+                ),
+                child: Column(
+                  children: [
+                    const Center(
+                      child: Balance(),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Divider(
+                      color: Colors.grey,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const HomeQuickActionsRow(),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    TransferMoneyCard(
+                      icon: CupertinoIcons.arrow_up_circle_fill,
+                      onTap: () {},
+                      text: 'Send',
+                      subtext: 'Transfer money locally or abroad',
+                      top: true,
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Icon(
-                Icons.flag_circle,
+            Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
               ),
-              const Text(
-                'NG Naira',
-                style: TextStyle(
-                  fontSize: 14,
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Divider(
+                    height: 0,
+                    indent: 0,
+                    thickness: 1,
+                    color: Colors.grey[100],
+                  ),
+                  TransferMoneyCard(
+                    icon: CupertinoIcons.arrow_down_circle_fill,
+                    onTap: () {},
+                    text: 'Request',
+                    subtext: 'Get cash from a contact or via a link',
+                    top: false,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    'Refer & earn',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const ReferCard(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const HomeTransactionsContainer(),
+                ],
               ),
-              GestureDetector(
-                onTap: () {},
-                child: const Icon(
-                  Icons.arrow_drop_down_circle,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
