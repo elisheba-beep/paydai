@@ -1,5 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:paydai/widgets/quickAction.dart';
+import 'package:paydai/widgets/homeWidgets/quickAction.dart';
 import 'package:flutter/cupertino.dart';
 
 class HomeQuickActionsRow extends StatelessWidget {

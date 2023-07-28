@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:paydai/utils/palette.dart';
-import 'package:paydai/widgets/balance.dart';
-import 'package:paydai/widgets/homeAppBarAction.dart';
-import 'package:paydai/widgets/homeAppBarCenter.dart';
-import 'package:paydai/widgets/homeQuickActionsRow.dart';
-import 'package:paydai/widgets/homeTransactionsContainer.dart';
-import 'package:paydai/widgets/referCard.dart';
-import 'package:paydai/widgets/transferMoneyCard.dart';
+import 'package:paydai/widgets/homeWidgets/balance.dart';
+import 'package:paydai/widgets/homeWidgets/homeAppBarAction.dart';
+import 'package:paydai/widgets/homeWidgets/homeAppBarCenter.dart';
+import 'package:paydai/widgets/homeWidgets/homeQuickActionsRow.dart';
+import 'package:paydai/widgets/homeWidgets/homeTransactionsContainer.dart';
+import 'package:paydai/widgets/homeWidgets/referCard.dart';
+import 'package:paydai/widgets/homeWidgets/transferMoneyCard.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

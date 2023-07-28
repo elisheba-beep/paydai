@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -13,8 +15,8 @@ class HomeAppBarAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 10.0,
+      padding: const EdgeInsets.only(
+        right: 15.0,
       ),
       child: GestureDetector(
         onTap: onTap,

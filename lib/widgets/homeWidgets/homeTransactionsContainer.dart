@@ -1,5 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:paydai/widgets/transactionCard.dart';
+import 'package:paydai/widgets/sharedWidgets/transactionCard.dart';
 
 class HomeTransactionsContainer extends StatelessWidget {
   const HomeTransactionsContainer({
