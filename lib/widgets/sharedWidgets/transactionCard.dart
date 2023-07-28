@@ -65,16 +65,21 @@ class TransactionCard extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                        Text(
-                          card
-                              ? 'Virtual Card'
-                              : beneficiary != null
-                                  ? beneficiary!
-                                  : '',
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
+                        SizedBox(
+                          width: 150,
+                          child: Text(
+                            card
+                                ? 'Virtual Card'
+                                : beneficiary != null
+                                    ? beneficiary!
+                                    : '',
+                            softWrap: false,
                             overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],

@@ -53,7 +53,7 @@ class HomeTransactionsContainer extends StatelessWidget {
             TransactionCard(
               send: true,
               card: false,
-              beneficiary: 'EKWUNIFE OLUWATOMIWA',
+              beneficiary: 'EKWUNIFE OLUWATOMIWA SOMTOCHUKWU',
               time: '04:15 PM',
               amount: 100,
               currency: 'Naira',
