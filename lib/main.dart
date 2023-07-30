@@ -25,7 +25,7 @@ class PayDai extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Palette.kToDark,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Palette.kToDark).copyWith(secondary: Colors.greenAccent),
       ),
       home: const BottomNav(),
     );

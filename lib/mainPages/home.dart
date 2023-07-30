@@ -8,6 +8,7 @@ import 'package:paydai/widgets/homeWidgets/homeQuickActionsRow.dart';
 import 'package:paydai/widgets/homeWidgets/homeTransactionsContainer.dart';
 import 'package:paydai/widgets/homeWidgets/referCard.dart';
 import 'package:paydai/widgets/homeWidgets/transferMoneyCard.dart';
+import 'package:paydai/widgets/sharedWidgets/usernameAvatar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -22,11 +23,10 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            CupertinoIcons.person_alt,
-          ),
+        leading: UsernameAvatar(
+          letter: 'O',
+          home: true,
+          onTap: () {},
         ),
         actions: [
           HomeAppBarAction(
